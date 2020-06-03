@@ -78,4 +78,11 @@ public class PlayerShip : Spaceship
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D collider){
+        if(collider.tag == "EnemyBullet"){
+            SpacesphipAnimator.SetBool("isDestroyed", true);
+            Destroy(gameObject, 1f);
+        }
+    }
+
 }

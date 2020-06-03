@@ -71,4 +71,11 @@ public class Enemy : Spaceship
         Instantiate(enemyBullet, spawnPoint.position, Quaternion.identity);
     }
 
+    public void OnTriggerEnter2D(Collider2D collider){
+        if(collider.tag == "PlayerBullet"){
+            SpacesphipAnimator.SetTrigger("Destroyed");
+            Destroy(gameObject, 1f);
+        }
+    }
+
 }

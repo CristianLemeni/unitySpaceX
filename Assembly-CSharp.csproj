@@ -55,16 +55,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Bullets\Bullet.cs" />
-     <Compile Include="Assets\Scripts\Bullets\RedBullet.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\States\Attack.cs" />
      <Compile Include="Assets\Scripts\Enemy\States\Idle.cs" />
      <Compile Include="Assets\Scripts\Enemy\States\IState.cs" />
      <Compile Include="Assets\Scripts\Enemy\States\Patrol.cs" />
+     <Compile Include="Assets\Scripts\Missiles\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Missiles\IMissile.cs" />
+     <Compile Include="Assets\Scripts\Missiles\RedBullet.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShip.cs" />
      <Compile Include="Assets\Scripts\SpaceShip\Spaceship.cs" />
+     <None Include="Assets\Images\License_CC-BY-3.txt" />
      <None Include="Assets\Images\space_background_pack\license.txt" />
+     <None Include="Assets\Images\Readme.txt" />
+     <None Include="Assets\Images\License_GNU_GPL3.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/spaceX/SpaceX/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
