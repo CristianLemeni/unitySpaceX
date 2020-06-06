@@ -39,10 +39,10 @@ public class Enemy : Spaceship
         if(moveTimer == 1){
             ChangeState(new Idle());
         }
-        if(moveTimer == 360){
+        if(moveTimer == 180){
             ChangeState(new Patrol());
         }
-        if(moveTimer == 400){
+        if(moveTimer == 200){
             ChangeState(new Attack());
             moveTimer = 0;
         }
@@ -73,6 +73,14 @@ public class Enemy : Spaceship
 
     public void OnTriggerEnter2D(Collider2D collider){
         if(collider.tag == "PlayerBullet"){
+            SpacesphipAnimator.SetTrigger("Destroyed");
+            Destroy(gameObject, 1f);
+        }
+        if(collider.tag == "PlayerRotator"){
+            SpacesphipAnimator.SetTrigger("Destroyed");
+            Destroy(gameObject, 1f);
+        }
+        if(collider.tag == "PlayerArrow"){
             SpacesphipAnimator.SetTrigger("Destroyed");
             Destroy(gameObject, 1f);
         }

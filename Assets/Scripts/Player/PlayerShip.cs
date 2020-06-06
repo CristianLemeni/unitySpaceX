@@ -18,6 +18,8 @@ public class PlayerShip : Spaceship
 
     [SerializeField]
     private Transform spawnPoint;
+
+    private bool shieldIsDown = false;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -82,6 +84,15 @@ public class PlayerShip : Spaceship
         if(collider.tag == "EnemyBullet"){
             SpacesphipAnimator.SetBool("isDestroyed", true);
             Destroy(gameObject, 1f);
+        }
+        if(collider.tag == "EnemyLaser" ){
+            if(shieldIsDown == true){
+                SpacesphipAnimator.SetBool("isDestroyed", true);
+                Destroy(gameObject, 1f);
+            }
+            else if(shieldIsDown == false){
+                
+            }
         }
     }
 

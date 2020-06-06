@@ -60,10 +60,14 @@
      <Compile Include="Assets\Scripts\Enemy\States\Idle.cs" />
      <Compile Include="Assets\Scripts\Enemy\States\IState.cs" />
      <Compile Include="Assets\Scripts\Enemy\States\Patrol.cs" />
-     <Compile Include="Assets\Scripts\Missiles\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Missiles\Arrows\AquaArrow.cs" />
+     <Compile Include="Assets\Scripts\Missiles\Bullets\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Missiles\Bullets\RedBullet.cs" />
      <Compile Include="Assets\Scripts\Missiles\IMissile.cs" />
-     <Compile Include="Assets\Scripts\Missiles\RedBullet.cs" />
+     <Compile Include="Assets\Scripts\Missiles\Lasers\RedLaser.cs" />
+     <Compile Include="Assets\Scripts\Missiles\Rotator\Rotator.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShip.cs" />
+     <Compile Include="Assets\Scripts\SpaceShip\Shield.cs" />
      <Compile Include="Assets\Scripts\SpaceShip\Spaceship.cs" />
      <None Include="Assets\Images\License_CC-BY-3.txt" />
      <None Include="Assets\Images\space_background_pack\license.txt" />
