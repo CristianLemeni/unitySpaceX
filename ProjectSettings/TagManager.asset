@@ -11,6 +11,8 @@ TagManager:
   - Shield
   - PlayerRotator
   - PlayerArrow
+  - PlayerBeamWeapon
+  - PlayerLightning
   layers:
   - Default
   - TransparentFX

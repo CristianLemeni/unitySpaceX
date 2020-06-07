@@ -9,6 +9,12 @@ public class Spaceship : MonoBehaviour
 
     public Rigidbody2D SpacesphipBody {get; set;}
 
+    public GameObject SpaceshipGameObject {get; set;}
+
+    public Transform SpaceshipTransform {get; set;}
+
+    public SpriteRenderer SpaceshipRenderer {get; set;}
+
     public float Speed{get; protected set;}
 
     protected int Health;

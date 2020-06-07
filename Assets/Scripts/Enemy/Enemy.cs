@@ -28,6 +28,7 @@ public class Enemy : Spaceship
         base.Start();
         Speed = 2;
         moveTimer = 0;
+        SpaceshipRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -79,6 +80,14 @@ public class Enemy : Spaceship
             Destroy(gameObject, 1f);
         }
         if(collider.tag == "PlayerArrow"){
+            SpacesphipAnimator.SetTrigger("Destroyed");
+            Destroy(gameObject, 1f);
+        }
+        if(collider.tag == "PlayerBeamWeapon"){
+            SpacesphipAnimator.SetTrigger("Destroyed");
+            Destroy(gameObject, 1f);
+        }
+        if(collider.tag == "PlayerLightning"){
             SpacesphipAnimator.SetTrigger("Destroyed");
             Destroy(gameObject, 1f);
         }

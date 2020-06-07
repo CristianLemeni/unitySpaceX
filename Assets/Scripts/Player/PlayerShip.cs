@@ -21,6 +21,8 @@ public class PlayerShip : Spaceship
 
     private bool shieldIsDown = false;
 
+    private bool isBeamWeapon = false;
+
     private Vector3 touchPosition;
     private Vector3 direction;
     // Start is called before the first frame update
@@ -30,6 +32,10 @@ public class PlayerShip : Spaceship
         Speed = 5;
         weaponCooldown = 0;
         SpacesphipBody = GetComponent<Rigidbody2D>();
+        SpaceshipTransform = GetComponent<Transform>();
+        if(playerMissile.tag == "PlayerBeamWeapon" || playerMissile.tag == "PlayerLightning"){
+            isBeamWeapon = true;
+        }
     }
 
     // Update is called once per frame
@@ -47,11 +53,24 @@ public class PlayerShip : Spaceship
                 SpacesphipBody.velocity = Vector2.zero;
             }
         }
-        if(weaponCooldown == 60){
+        if(weaponCooldown == 60 && !isBeamWeapon){
             Instantiate(playerMissile, spawnPoint.position, Quaternion.identity);
             weaponCooldown = 0;
         }
+        if(weaponCooldown == 0 && isBeamWeapon){
+            Vector3 temp = spawnPoint.position;
+            if(playerMissile.tag == "PlayerBeamWeapon"){
+                temp.y -= temp.y;
+            }
+             if(playerMissile.tag == "PlayerLightning"){
+                temp.y -= temp.y/2.5f;
+            }
+            GameObject missile = Instantiate(playerMissile, temp, Quaternion.identity) as GameObject;
+            missile.transform.parent = transform;
+        }
         weaponCooldown++;
+
+        //pc functions
         Move();
         Attack();
     }
