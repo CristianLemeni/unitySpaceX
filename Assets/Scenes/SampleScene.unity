@@ -553,6 +553,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2049106992 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5015043934420984739, guid: 7b8f7aad1d98abb4780cbd5e0efcb1b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5015043935177969030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3332884933382307733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -689,5 +695,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5015043934420984737, guid: 7b8f7aad1d98abb4780cbd5e0efcb1b6,
+        type: 3}
+      propertyPath: spaceshipBody
+      value: 
+      objectReference: {fileID: 2049106992}
+    - target: {fileID: 5015043934420984737, guid: 7b8f7aad1d98abb4780cbd5e0efcb1b6,
+        type: 3}
+      propertyPath: playerMissile
+      value: 
+      objectReference: {fileID: 5079644867920124487, guid: e48127af42becff4b80a85b68d5fa8d1,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b8f7aad1d98abb4780cbd5e0efcb1b6, type: 3}

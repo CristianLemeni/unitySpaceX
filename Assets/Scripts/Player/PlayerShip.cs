@@ -14,22 +14,44 @@ public class PlayerShip : Spaceship
     public float maxY;
 
     [SerializeField]
-    private GameObject playerBullet;
+    private GameObject playerMissile;
 
     [SerializeField]
     private Transform spawnPoint;
 
     private bool shieldIsDown = false;
+
+    private Vector3 touchPosition;
+    private Vector3 direction;
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         Speed = 5;
+        weaponCooldown = 0;
+        SpacesphipBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //player movement with touchscreen
+        if(Input.touchCount > 0){
+            Touch touch = Input.GetTouch(0);
+            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0;
+            direction = (touchPosition - transform.position);
+            SpacesphipBody.velocity = new Vector2(direction.x, direction.y) * Speed;
+
+            if(touch.phase == TouchPhase.Ended){
+                SpacesphipBody.velocity = Vector2.zero;
+            }
+        }
+        if(weaponCooldown == 60){
+            Instantiate(playerMissile, spawnPoint.position, Quaternion.identity);
+            weaponCooldown = 0;
+        }
+        weaponCooldown++;
         Move();
         Attack();
     }
@@ -76,7 +98,7 @@ public class PlayerShip : Spaceship
     void Attack(){
         
         if(Input.GetKeyDown(KeyCode.Space)){
-            Instantiate(playerBullet, spawnPoint.position, Quaternion.identity);
+            Instantiate(playerMissile, spawnPoint.position, Quaternion.identity);
         }
     }
 

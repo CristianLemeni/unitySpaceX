@@ -15,8 +15,6 @@ public class Enemy : Spaceship
 
     private IState currentState;
 
-    private int weaponCooldown = 0;
-
     public bool switchPatrol = false;
 
     public float minX = -7;
@@ -39,10 +37,10 @@ public class Enemy : Spaceship
         if(moveTimer == 1){
             ChangeState(new Idle());
         }
-        if(moveTimer == 180){
+        if(moveTimer == 90){
             ChangeState(new Patrol());
         }
-        if(moveTimer == 200){
+        if(moveTimer == 100){
             ChangeState(new Attack());
             moveTimer = 0;
         }

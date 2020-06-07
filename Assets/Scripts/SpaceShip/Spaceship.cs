@@ -16,6 +16,7 @@ public class Spaceship : MonoBehaviour
     protected int Damage;
 
     protected int WeaponType;
+    protected int weaponCooldown;
     // Start is called before the first frame update
     public virtual void Start()
     {
